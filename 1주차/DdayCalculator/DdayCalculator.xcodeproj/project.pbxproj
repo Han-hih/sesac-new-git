@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8011D0072A729B4000034100 /* popupWindowViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8011D0062A729B4000034100 /* popupWindowViewcontroller.swift */; };
+		802599962A74A987003671D6 /* git test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802599952A74A987003671D6 /* git test.swift */; };
 		8038B92F2A691EB500493E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8038B92E2A691EB500493E46 /* AppDelegate.swift */; };
 		8038B9312A691EB500493E46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8038B9302A691EB500493E46 /* SceneDelegate.swift */; };
 		8038B9332A691EB500493E46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8038B9322A691EB500493E46 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		8011D0062A729B4000034100 /* popupWindowViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupWindowViewcontroller.swift; sourceTree = "<group>"; };
+		802599952A74A987003671D6 /* git test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "git test.swift"; sourceTree = "<group>"; };
 		8038B92B2A691EB500493E46 /* DdayCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DdayCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8038B92E2A691EB500493E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8038B9302A691EB500493E46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				8038B92E2A691EB500493E46 /* AppDelegate.swift */,
 				8038B9302A691EB500493E46 /* SceneDelegate.swift */,
 				8038B9322A691EB500493E46 /* ViewController.swift */,
+				802599952A74A987003671D6 /* git test.swift */,
 				8038B9342A691EB500493E46 /* Main.storyboard */,
 				8011D0062A729B4000034100 /* popupWindowViewcontroller.swift */,
 				8038B9372A691EB600493E46 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				8038B9332A691EB500493E46 /* ViewController.swift in Sources */,
 				8038B92F2A691EB500493E46 /* AppDelegate.swift in Sources */,
 				8038B9312A691EB500493E46 /* SceneDelegate.swift in Sources */,
+				802599962A74A987003671D6 /* git test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
