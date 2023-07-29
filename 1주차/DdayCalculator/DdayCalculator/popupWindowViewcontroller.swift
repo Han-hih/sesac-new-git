@@ -24,9 +24,6 @@ class popupWindowViewcontroller: UIViewController {
     }
     
     
-    
-    
-    
     func setUI() {
         
         inputTextField.delegate = self
