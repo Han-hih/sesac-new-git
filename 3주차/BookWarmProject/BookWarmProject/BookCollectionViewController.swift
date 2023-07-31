@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+
 
 class BookCollectionViewController: UICollectionViewController {
     
@@ -17,8 +17,8 @@ class BookCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //        3.
-        let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
+        let nib = UINib(nibName: "TestCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "TestCollectionViewCell")
         setCollectionViewLayOut()
         
     }
@@ -33,7 +33,19 @@ class BookCollectionViewController: UICollectionViewController {
         navigation.title = "검색화면"
         present(navigation, animated: true)
     }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+            
+            return
+        }
+        
+        navigationController?.pushViewController(viewcontroller, animated: true)
+        self.navigationController?.navigationBar.topItem?.title = "영화목록"
+    }
     
+   
     
     func setCollectionViewLayOut() {
         let layout = UICollectionViewFlowLayout()
@@ -54,7 +66,7 @@ class BookCollectionViewController: UICollectionViewController {
     }
     //    2.
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TestCollectionViewCell", for: indexPath) as? TestCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.layer.cornerRadius = 20
