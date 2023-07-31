@@ -23,6 +23,18 @@ class BookCollectionViewController: UICollectionViewController {
         
     }
     
+    @IBAction func searchButtonTapped(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController else { return
+        }
+        
+        let navigation = UINavigationController(rootViewController: viewcontroller)
+        navigation.modalPresentationStyle = .fullScreen
+        navigation.title = "검색화면"
+        present(navigation, animated: true)
+    }
+    
+    
     func setCollectionViewLayOut() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 20
