@@ -11,10 +11,16 @@ import UIKit
 
 class BookCollectionViewController: UICollectionViewController {
     
-    var list = MovieInfo()
-    
-    
-    override func viewDidLoad() {
+    var list = MovieInfo() {
+        didSet {
+            print("didset")
+            collectionView.reloadData()
+        }
+    }
+
+
+
+        override func viewDidLoad() {
         super.viewDidLoad()
         //        3.
         let nib = UINib(nibName: testCollectionViewCell.identifier, bundle: nil)
@@ -74,9 +80,17 @@ class BookCollectionViewController: UICollectionViewController {
         cell.clipsToBounds = true
         let row = list.movie[indexPath.row]
         cell.configure(row: row)
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        
         
         return cell
     }
-    
+//    하트버튼 눌렀을 때 동작하는 함수
+    @objc func likeButtonTapped(_ sender: UIButton) {
+        print("clicked \(sender.tag)")
+        list.movie[sender.tag].like.toggle()
+        print()
+    }
 }
 

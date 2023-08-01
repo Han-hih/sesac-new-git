@@ -17,6 +17,10 @@ class testCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var mainView: UIView!
     
+    @IBOutlet var likeButton: UIButton!
+    
+
+    
     var randomColor = UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1)
     func configure(row: Movie) {
         mainView.layer.cornerRadius = 20
@@ -28,5 +32,13 @@ class testCollectionViewCell: UICollectionViewCell {
         movieImage?.image = UIImage(named: row.title)
         rateLabel?.text = "\(row.rate)"
         rateLabel.textColor = .white
+        
+        if row.like {
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+        
     }
+    
 }
