@@ -47,6 +47,7 @@ class BookCollectionViewController: UICollectionViewController {
             
             return
         }
+        viewcontroller.movie = list.movie[indexPath.row]
         viewcontroller.contents = list.movie[indexPath.row].title
         navigationController?.pushViewController(viewcontroller, animated: true)
     

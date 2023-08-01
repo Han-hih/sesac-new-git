@@ -80,7 +80,7 @@
             <size key="customSize" width="180" height="191"/>
             <connections>
                 <outlet property="likeButton" destination="4bP-FQ-9zB" id="fBZ-mc-9cZ"/>
-                <outlet property="mainView" destination="mU8-4B-Jg7" id="FZr-qO-cIC"/>
+                <outlet property="mainView" destination="mU8-4B-Jg7" id="NMs-6H-hFI"/>
                 <outlet property="movieImage" destination="aqF-zb-LOb" id="0Ya-ow-4DH"/>
                 <outlet property="movieLabel" destination="Yt4-PY-VMr" id="JTR-V8-AeA"/>
                 <outlet property="rateLabel" destination="Qhy-GY-vwp" id="bAc-yi-3Ic"/>

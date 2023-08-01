@@ -19,13 +19,14 @@ class testCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var likeButton: UIButton!
     
-
     
-    var randomColor = UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1)
+    
+    
+   
     func configure(row: Movie) {
         mainView.layer.cornerRadius = 20
         mainView.clipsToBounds = true
-        mainView.backgroundColor = randomColor
+        mainView.backgroundColor = row.color
         movieLabel.font = .boldSystemFont(ofSize: 20)
         movieLabel.textColor = .white
         movieLabel?.text = row.title

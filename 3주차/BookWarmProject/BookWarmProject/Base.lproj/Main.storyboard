@@ -89,8 +89,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulz-Kp-Opf">
-                                <rect key="frame" x="176" y="416" width="41.333333333333343" height="20.333333333333314"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-Vf-Mph">
+                                <rect key="frame" x="204" y="75" width="173" height="217"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulz-Kp-Opf">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="런타임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="931-w0-iFm">
+                                        <rect key="frame" x="0.0" y="72" width="173" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spf-h5-9Mo">
+                                        <rect key="frame" x="0.0" y="134.33333333333334" width="173" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개봉일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAo-Ko-hkm">
+                                        <rect key="frame" x="0.0" y="196.66666666666669" width="173" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2uG-6j-4P5">
+                                <rect key="frame" x="16" y="75" width="172" height="284"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2uG-6j-4P5" secondAttribute="height" multiplier="43:71" id="1FP-TV-tuV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요약" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT5-Ki-Q9X">
+                                <rect key="frame" x="16" y="379" width="361" height="423"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -99,10 +134,26 @@
                         <viewLayoutGuide key="safeArea" id="gmz-EV-Hxs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ulz-Kp-Opf" firstAttribute="centerX" secondItem="1r2-yG-mes" secondAttribute="centerX" id="AHj-z0-EsX"/>
-                            <constraint firstItem="Ulz-Kp-Opf" firstAttribute="centerY" secondItem="1r2-yG-mes" secondAttribute="centerY" id="hv6-1b-SP5"/>
+                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="trailing" secondItem="MT5-Ki-Q9X" secondAttribute="trailing" constant="16" id="3Em-ZE-ufO"/>
+                            <constraint firstItem="MT5-Ki-Q9X" firstAttribute="leading" secondItem="gmz-EV-Hxs" secondAttribute="leading" constant="16" id="Fpo-fc-vJ7"/>
+                            <constraint firstItem="2uG-6j-4P5" firstAttribute="top" secondItem="gmz-EV-Hxs" secondAttribute="top" constant="16" id="NXk-cg-jZQ"/>
+                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="trailing" secondItem="XLO-Vf-Mph" secondAttribute="trailing" constant="16" id="Twt-oH-XF8"/>
+                            <constraint firstItem="2uG-6j-4P5" firstAttribute="width" secondItem="1r2-yG-mes" secondAttribute="height" multiplier="43:213" id="XdR-AE-spD"/>
+                            <constraint firstItem="MT5-Ki-Q9X" firstAttribute="top" secondItem="2uG-6j-4P5" secondAttribute="bottom" constant="20" id="Yne-EI-ONN"/>
+                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="bottom" secondItem="MT5-Ki-Q9X" secondAttribute="bottom" constant="16" id="rJd-n0-Egy"/>
+                            <constraint firstItem="2uG-6j-4P5" firstAttribute="leading" secondItem="gmz-EV-Hxs" secondAttribute="leading" constant="16" id="sdC-Gl-Nll"/>
+                            <constraint firstItem="XLO-Vf-Mph" firstAttribute="leading" secondItem="2uG-6j-4P5" secondAttribute="trailing" constant="16" id="unJ-CD-kYV"/>
+                            <constraint firstItem="XLO-Vf-Mph" firstAttribute="top" secondItem="2uG-6j-4P5" secondAttribute="top" id="v46-EC-t8F"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="MT5-Ki-Q9X" id="Akr-Fb-Fsi"/>
+                        <outlet property="movieImageView" destination="2uG-6j-4P5" id="tg9-BD-RBy"/>
+                        <outlet property="movieTitleLabel" destination="Ulz-Kp-Opf" id="HKx-Dj-uyi"/>
+                        <outlet property="opendateLabel" destination="VAo-Ko-hkm" id="Xp6-hA-e4o"/>
+                        <outlet property="rateLabel" destination="spf-h5-9Mo" id="Py2-Vn-nEM"/>
+                        <outlet property="runtimeLabel" destination="931-w0-iFm" id="gzP-rW-u9R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXO-5T-TFu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
