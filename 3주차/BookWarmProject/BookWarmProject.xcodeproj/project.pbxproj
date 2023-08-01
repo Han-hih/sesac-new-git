@@ -18,6 +18,9 @@
 		80AB390E2A779BD100716EE8 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AB390C2A779BD100716EE8 /* BookCollectionViewCell.xib */; };
 		80AB39102A779E8100716EE8 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB390F2A779E8100716EE8 /* MovieInfo.swift */; };
 		80AB39122A77A1F200716EE8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB39112A77A1F200716EE8 /* Movie.swift */; };
+		80AB39142A77CD1D00716EE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB39132A77CD1D00716EE8 /* DetailViewController.swift */; };
+		80AB39172A77D67C00716EE8 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB39152A77D67C00716EE8 /* TestCollectionViewCell.swift */; };
+		80AB39182A77D67C00716EE8 /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AB39162A77D67C00716EE8 /* TestCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		80AB390C2A779BD100716EE8 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		80AB390F2A779E8100716EE8 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		80AB39112A77A1F200716EE8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		80AB39132A77CD1D00716EE8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		80AB39152A77D67C00716EE8 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+		80AB39162A77D67C00716EE8 /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +78,10 @@
 				80AB39092A779BBF00716EE8 /* BookCollectionViewController.swift */,
 				80AB390B2A779BD100716EE8 /* BookCollectionViewCell.swift */,
 				80AB390C2A779BD100716EE8 /* BookCollectionViewCell.xib */,
+				80AB39152A77D67C00716EE8 /* TestCollectionViewCell.swift */,
+				80AB39162A77D67C00716EE8 /* TestCollectionViewCell.xib */,
 				80AB38F72A77995F00716EE8 /* Main.storyboard */,
+				80AB39132A77CD1D00716EE8 /* DetailViewController.swift */,
 				80AB390F2A779E8100716EE8 /* MovieInfo.swift */,
 				80AB39112A77A1F200716EE8 /* Movie.swift */,
 				80AB38FA2A77996000716EE8 /* Assets.xcassets */,
@@ -143,6 +152,7 @@
 				80AB38FE2A77996000716EE8 /* LaunchScreen.storyboard in Resources */,
 				80AB390E2A779BD100716EE8 /* BookCollectionViewCell.xib in Resources */,
 				80AB38FB2A77996000716EE8 /* Assets.xcassets in Resources */,
+				80AB39182A77D67C00716EE8 /* TestCollectionViewCell.xib in Resources */,
 				80AB38F92A77995F00716EE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,10 +167,12 @@
 				80AB39122A77A1F200716EE8 /* Movie.swift in Sources */,
 				80AB38F62A77995F00716EE8 /* ViewController.swift in Sources */,
 				80AB38F22A77995F00716EE8 /* AppDelegate.swift in Sources */,
+				80AB39172A77D67C00716EE8 /* TestCollectionViewCell.swift in Sources */,
 				80AB38F42A77995F00716EE8 /* SceneDelegate.swift in Sources */,
 				80AB390D2A779BD100716EE8 /* BookCollectionViewCell.swift in Sources */,
 				80AB39102A779E8100716EE8 /* MovieInfo.swift in Sources */,
 				80AB390A2A779BBF00716EE8 /* BookCollectionViewController.swift in Sources */,
+				80AB39142A77CD1D00716EE8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

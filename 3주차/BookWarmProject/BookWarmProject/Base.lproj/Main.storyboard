@@ -81,6 +81,36 @@
             </objects>
             <point key="canvasLocation" x="1272.5190839694656" y="0.70422535211267612"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="7Vc-mM-0vP">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="l2a-V8-dTO" customClass="DetailViewController" customModule="BookWarmProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZt-v5-IsF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-IZ-iwg">
+                                <rect key="frame" x="97.666666666666686" y="374.66666666666669" width="198" height="103"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="86"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lt9-1f-TT4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3cs-IZ-iwg" firstAttribute="centerX" secondItem="gZt-v5-IsF" secondAttribute="centerX" id="Yy5-Na-eIB"/>
+                            <constraint firstItem="3cs-IZ-iwg" firstAttribute="centerY" secondItem="gZt-v5-IsF" secondAttribute="centerY" id="te9-Rm-f0E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentsLabel" destination="3cs-IZ-iwg" id="liD-wY-1nL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="29W-uI-oVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273" y="888"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rbg-Tg-Xdt">
             <objects>
