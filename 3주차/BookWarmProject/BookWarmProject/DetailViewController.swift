@@ -8,23 +8,21 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
     @IBOutlet var contentsLabel: UILabel!
     
     var contents: String = "빈공간"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = contents
-        
+      
     }
     
     func setNavigationBar() {
         let backButton = UIImage(systemName: "chevron.backward")
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: backButton, style: .plain, target: self, action: #selector(backButtonTapped))
-        navigationItem.title = contents
+        navigationItem.leftBarButtonItem?.title = .none
         
     }
     @objc func backButtonTapped() {

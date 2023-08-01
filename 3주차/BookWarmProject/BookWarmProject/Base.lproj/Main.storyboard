@@ -82,34 +82,31 @@
             <point key="canvasLocation" x="1272.5190839694656" y="0.70422535211267612"/>
         </scene>
         <!--Detail View Controller-->
-        <scene sceneID="7Vc-mM-0vP">
+        <scene sceneID="sgf-DI-8a0">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="l2a-V8-dTO" customClass="DetailViewController" customModule="BookWarmProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gZt-v5-IsF">
+                <viewController storyboardIdentifier="DetailViewController" id="ro7-uX-Ne2" customClass="DetailViewController" customModule="BookWarmProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1r2-yG-mes">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-IZ-iwg">
-                                <rect key="frame" x="97.666666666666686" y="374.66666666666669" width="198" height="103"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="86"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulz-Kp-Opf">
+                                <rect key="frame" x="176" y="416" width="41.333333333333343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="lt9-1f-TT4"/>
+                        <viewLayoutGuide key="safeArea" id="gmz-EV-Hxs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3cs-IZ-iwg" firstAttribute="centerX" secondItem="gZt-v5-IsF" secondAttribute="centerX" id="Yy5-Na-eIB"/>
-                            <constraint firstItem="3cs-IZ-iwg" firstAttribute="centerY" secondItem="gZt-v5-IsF" secondAttribute="centerY" id="te9-Rm-f0E"/>
+                            <constraint firstItem="Ulz-Kp-Opf" firstAttribute="centerX" secondItem="1r2-yG-mes" secondAttribute="centerX" id="AHj-z0-EsX"/>
+                            <constraint firstItem="Ulz-Kp-Opf" firstAttribute="centerY" secondItem="1r2-yG-mes" secondAttribute="centerY" id="hv6-1b-SP5"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="contentsLabel" destination="3cs-IZ-iwg" id="liD-wY-1nL"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="29W-uI-oVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXO-5T-TFu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="888"/>
+            <point key="canvasLocation" x="1235.8778625954199" y="678.87323943661977"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rbg-Tg-Xdt">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80677A712A78CD1E00A0515E /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80677A702A78CD1E00A0515E /* Property List.plist */; };
 		80A8D4B32A6A698600E73D5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A8D4B22A6A698600E73D5F /* AppDelegate.swift */; };
 		80A8D4B52A6A698600E73D5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A8D4B42A6A698600E73D5F /* SceneDelegate.swift */; };
 		80A8D4B72A6A698600E73D5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A8D4B62A6A698600E73D5F /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80677A702A78CD1E00A0515E /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		80A8D4AF2A6A698600E73D5F /* newlycoinedproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newlycoinedproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A8D4B22A6A698600E73D5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80A8D4B42A6A698600E73D5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,7 +26,6 @@
 		80A8D4B92A6A698600E73D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80A8D4BB2A6A698700E73D5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80A8D4BE2A6A698700E73D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		80A8D4C02A6A698700E73D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80C885802A6AA04100AB6694 /* autolayoutPractice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = autolayoutPractice.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +66,7 @@
 				80A8D4B82A6A698600E73D5F /* Main.storyboard */,
 				80A8D4BB2A6A698700E73D5F /* Assets.xcassets */,
 				80A8D4BD2A6A698700E73D5F /* LaunchScreen.storyboard */,
-				80A8D4C02A6A698700E73D5F /* Info.plist */,
+				80677A702A78CD1E00A0515E /* Property List.plist */,
 			);
 			path = newlycoinedproject;
 			sourceTree = "<group>";
@@ -139,6 +140,7 @@
 				80A8D4BF2A6A698700E73D5F /* LaunchScreen.storyboard in Resources */,
 				80A8D4BC2A6A698700E73D5F /* Assets.xcassets in Resources */,
 				80C885812A6AA04100AB6694 /* autolayoutPractice.storyboard in Resources */,
+				80677A712A78CD1E00A0515E /* Property List.plist in Resources */,
 				80A8D4BA2A6A698600E73D5F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
