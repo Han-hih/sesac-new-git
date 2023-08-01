@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    static let identifier = "ViewController"
     @IBOutlet var searchLabelResult: UILabel!
     
     

@@ -9,6 +9,8 @@ import UIKit
 
 class testCollectionViewCell: UICollectionViewCell {
 
+    static let identifier = "testCollectionViewCell"
+    
     @IBOutlet var movieLabel: UILabel!
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var movieImage: UIImageView!

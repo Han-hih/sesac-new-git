@@ -44,16 +44,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bP-FQ-9zB">
+                                <rect key="frame" x="10" y="55" width="39" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4bP-FQ-9zB" secondAttribute="height" multiplier="1:1" id="fdB-un-0cL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aqF-zb-LOb" firstAttribute="top" secondItem="Yt4-PY-VMr" secondAttribute="bottom" constant="20" id="DfN-MX-rWk"/>
                             <constraint firstItem="Qhy-GY-vwp" firstAttribute="leading" secondItem="mU8-4B-Jg7" secondAttribute="leading" constant="10" id="GAp-Ws-2AY"/>
                             <constraint firstItem="Yt4-PY-VMr" firstAttribute="leading" secondItem="mU8-4B-Jg7" secondAttribute="leading" constant="10" id="HEe-Om-9Sw"/>
+                            <constraint firstItem="4bP-FQ-9zB" firstAttribute="top" secondItem="aqF-zb-LOb" secondAttribute="top" id="JPM-hm-Ae5"/>
+                            <constraint firstItem="4bP-FQ-9zB" firstAttribute="leading" secondItem="Qhy-GY-vwp" secondAttribute="leading" id="PwV-c7-lOP"/>
                             <constraint firstItem="Yt4-PY-VMr" firstAttribute="top" secondItem="mU8-4B-Jg7" secondAttribute="top" constant="10" id="QGi-HN-6HY"/>
                             <constraint firstAttribute="bottom" secondItem="Qhy-GY-vwp" secondAttribute="bottom" constant="20" id="fXV-75-RIE"/>
                             <constraint firstAttribute="trailing" secondItem="aqF-zb-LOb" secondAttribute="trailing" constant="10" id="mG9-KC-l8R"/>
                             <constraint firstAttribute="bottom" secondItem="aqF-zb-LOb" secondAttribute="bottom" id="ol5-nx-W0S"/>
+                            <constraint firstItem="Qhy-GY-vwp" firstAttribute="top" secondItem="4bP-FQ-9zB" secondAttribute="bottom" constant="40" id="w5n-at-KfC"/>
                             <constraint firstItem="aqF-zb-LOb" firstAttribute="width" secondItem="mU8-4B-Jg7" secondAttribute="height" multiplier="90:175" id="x5l-ha-hZC"/>
                         </constraints>
                     </view>
@@ -76,4 +87,7 @@
             <point key="canvasLocation" x="125.19083969465649" y="69.366197183098592"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+    </resources>
 </document>

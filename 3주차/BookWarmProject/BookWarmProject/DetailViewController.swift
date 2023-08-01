@@ -8,6 +8,9 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    static let identifier = "DetailViewController"
+    
     @IBOutlet var contentsLabel: UILabel!
     
     var contents: String = "빈공간"

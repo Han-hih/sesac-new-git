@@ -17,15 +17,15 @@ class BookCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //        3.
-        let nib = UINib(nibName: "testCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "testCollectionViewCell")
+        let nib = UINib(nibName: testCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: testCollectionViewCell.identifier)
         setCollectionViewLayOut()
         title = "영화목록"
     }
     
     @IBAction func searchButtonTapped(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController else { return
+        guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: ViewController.identifier) as? ViewController else { return
         }
         
         let navigation = UINavigationController(rootViewController: viewcontroller)
@@ -37,7 +37,7 @@ class BookCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+        guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
             
             return
         }
@@ -67,7 +67,7 @@ class BookCollectionViewController: UICollectionViewController {
     }
     //    2.
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "testCollectionViewCell", for: indexPath) as? testCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testCollectionViewCell.identifier, for: indexPath) as? testCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.layer.cornerRadius = 20
