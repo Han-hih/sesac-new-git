@@ -17,7 +17,7 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet var arountTableView: UITableView!
     
     @IBOutlet var aroundCollectionView: UICollectionView!
-    
+    var list = MovieInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,9 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
         aroundCollectionView.delegate = self
         aroundCollectionView.dataSource = self
         
+        arountTableView.rowHeight = 150
         
+        configureCollectionViewLayout()
         
         let nib = UINib(nibName: AroundTableViewCell.identifier, bundle: nil)
         arountTableView.register(nib, forCellReuseIdentifier: AroundTableViewCell.identifier)
@@ -36,7 +38,7 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
         aroundCollectionView.register(collectionNib, forCellWithReuseIdentifier: AroundCollectionViewCell.identifier)
         
         //        aroundCollectionView.register(AroundCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "collectionHeader")
-        //        arountTableView.rowHeight = 150
+        //
         //
         //        configureCollectionViewLayout()
         //    }
@@ -61,6 +63,17 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "요즘 인기 영화"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
+            return
+        }
+        viewcontroller.movie = list.movie[indexPath.row]
+        viewcontroller.contents = list.movie[indexPath.row].title
+        self.present(viewcontroller, animated: true)
+        
     }
     
     // MARK: - 컬렉션뷰 세팅
