@@ -71,9 +71,9 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
             return
         }
         viewcontroller.movie = list.movie[indexPath.row]
-        viewcontroller.contents = list.movie[indexPath.row].title
+        viewcontroller.modalPresentationStyle =  UIModalPresentationStyle.fullScreen
         self.present(viewcontroller, animated: true)
-        
+        tableView.reloadData()
     }
     
     // MARK: - 컬렉션뷰 세팅
@@ -90,6 +90,16 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
         cell.configure(row: row)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
+            return
+        }
+        viewcontroller.movie = list.movie[indexPath.row]
+        viewcontroller.modalPresentationStyle =  UIModalPresentationStyle.fullScreen
+        self.present(viewcontroller, animated: true)
     }
     
     //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

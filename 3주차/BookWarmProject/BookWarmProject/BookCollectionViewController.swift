@@ -38,6 +38,7 @@ class BookCollectionViewController: UICollectionViewController {
         navigation.modalPresentationStyle = .fullScreen
         navigation.title = "검색 화면"
         present(navigation, animated: true)
+        
     }
     
     
@@ -49,7 +50,7 @@ class BookCollectionViewController: UICollectionViewController {
         viewcontroller.movie = list.movie[indexPath.row]
         viewcontroller.contents = list.movie[indexPath.row].title
         navigationController?.pushViewController(viewcontroller, animated: true)
-    
+        
         
     }
     

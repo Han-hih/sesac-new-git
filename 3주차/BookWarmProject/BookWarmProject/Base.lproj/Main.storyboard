@@ -126,11 +126,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요약" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT5-Ki-Q9X">
-                                <rect key="frame" x="16" y="379" width="361" height="423"/>
+                                <rect key="frame" x="16" y="379" width="361" height="389"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9h-T2-neX">
+                                <rect key="frame" x="30" y="773.66666666666663" width="333" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="dissmisButtonTapped:" destination="ro7-uX-Ne2" eventType="touchUpInside" id="RHe-02-8Wq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gmz-EV-Hxs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -141,14 +149,19 @@
                             <constraint firstItem="gmz-EV-Hxs" firstAttribute="trailing" secondItem="XLO-Vf-Mph" secondAttribute="trailing" constant="16" id="Twt-oH-XF8"/>
                             <constraint firstItem="2uG-6j-4P5" firstAttribute="width" secondItem="1r2-yG-mes" secondAttribute="height" multiplier="43:213" id="XdR-AE-spD"/>
                             <constraint firstItem="MT5-Ki-Q9X" firstAttribute="top" secondItem="2uG-6j-4P5" secondAttribute="bottom" constant="20" id="Yne-EI-ONN"/>
-                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="bottom" secondItem="MT5-Ki-Q9X" secondAttribute="bottom" constant="16" id="rJd-n0-Egy"/>
+                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="bottom" secondItem="d9h-T2-neX" secondAttribute="bottom" constant="10" id="ncd-1k-SPb"/>
+                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="bottom" secondItem="MT5-Ki-Q9X" secondAttribute="bottom" constant="50" id="rJd-n0-Egy"/>
+                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="trailing" secondItem="d9h-T2-neX" secondAttribute="trailing" constant="30" id="rTp-Lt-3Oi"/>
                             <constraint firstItem="2uG-6j-4P5" firstAttribute="leading" secondItem="gmz-EV-Hxs" secondAttribute="leading" constant="16" id="sdC-Gl-Nll"/>
+                            <constraint firstItem="d9h-T2-neX" firstAttribute="leading" secondItem="gmz-EV-Hxs" secondAttribute="leading" constant="30" id="uID-MN-IS8"/>
                             <constraint firstItem="XLO-Vf-Mph" firstAttribute="leading" secondItem="2uG-6j-4P5" secondAttribute="trailing" constant="16" id="unJ-CD-kYV"/>
                             <constraint firstItem="XLO-Vf-Mph" firstAttribute="top" secondItem="2uG-6j-4P5" secondAttribute="top" id="v46-EC-t8F"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vm1-yi-vaY"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="MT5-Ki-Q9X" id="Akr-Fb-Fsi"/>
+                        <outlet property="dismissButton" destination="d9h-T2-neX" id="0oN-6R-STd"/>
                         <outlet property="movieImageView" destination="2uG-6j-4P5" id="tg9-BD-RBy"/>
                         <outlet property="movieTitleLabel" destination="Ulz-Kp-Opf" id="HKx-Dj-uyi"/>
                         <outlet property="opendateLabel" destination="VAo-Ko-hkm" id="Xp6-hA-e4o"/>
@@ -158,9 +171,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXO-5T-TFu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3891" y="735"/>
+            <point key="canvasLocation" x="4233" y="467"/>
         </scene>
-        <!--둘러보기-->
+        <!--Table Collection View Controller-->
         <scene sceneID="gyf-QO-6kU">
             <objects>
                 <viewController storyboardIdentifier="TableCollectionViewController" id="1jV-2F-vXq" customClass="TableCollectionViewController" customModule="BookWarmProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -226,7 +239,7 @@
                             <constraint firstItem="IpJ-mG-RxS" firstAttribute="bottom" secondItem="4Ye-yk-j3I" secondAttribute="bottom" id="oqN-HR-2yN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="둘러보기" id="KV7-Vo-Ao0"/>
+                    <navigationItem key="navigationItem" id="tdZ-bB-n15"/>
                     <connections>
                         <outlet property="aroundCollectionView" destination="nmK-rh-hmg" id="qxW-Ff-11U"/>
                         <outlet property="arountTableView" destination="4Ye-yk-j3I" id="rkE-yq-aTS"/>
@@ -234,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNS-uC-D0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="735"/>
+            <point key="canvasLocation" x="3202.2900763358775" y="734.50704225352115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rbg-Tg-Xdt">
@@ -267,12 +280,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="wuo-Ex-hS4" kind="relationship" relationship="viewControllers" id="5pS-bn-0y7"/>
-                        <segue destination="1jV-2F-vXq" kind="relationship" relationship="viewControllers" id="U4j-et-Ama"/>
+                        <segue destination="yKX-q0-ged" kind="relationship" relationship="viewControllers" id="U4j-et-Ama"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vO-vn-kaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1272.5190839694656" y="0.70422535211267612"/>
+        </scene>
+        <!--둘러보기-->
+        <scene sceneID="zcn-VL-N8d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yKX-q0-ged" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="둘러보기" id="KV7-Vo-Ao0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kuz-jm-QjG">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1jV-2F-vXq" kind="relationship" relationship="rootViewController" id="RDr-c5-gQK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lwr-Oy-qAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2275.5725190839694" y="734.50704225352115"/>
         </scene>
     </scenes>
     <resources>

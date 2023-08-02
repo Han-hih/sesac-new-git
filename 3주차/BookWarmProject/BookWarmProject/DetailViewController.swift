@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var opendateLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
-    
+    @IBOutlet var dismissButton: UIButton!
     
     
     
@@ -33,7 +33,11 @@ class DetailViewController: UIViewController {
         title = contents
         
         configure()
-       
+        if modalPresentationStyle == .fullScreen {
+            dismissButton.isHidden = false
+        } else {
+            dismissButton.isHidden = true
+        }
     }
     
     func configure() {
@@ -46,10 +50,9 @@ class DetailViewController: UIViewController {
         descriptionLabel.text = movie.overview
         descriptionLabel.numberOfLines = 0
         
+        dismissButton.setTitle("뒤로가기", for: .normal)
     }
    
-    
-    
     func setNavigationBar() {
         let backButton = UIImage(systemName: "chevron.backward")
         
@@ -60,4 +63,10 @@ class DetailViewController: UIViewController {
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func dissmisButtonTapped(_ sender: UIButton) {
+        
+        dismiss(animated: true)
+    }
+    
 }
