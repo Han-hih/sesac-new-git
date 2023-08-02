@@ -26,6 +26,7 @@
 		80E15D2C2A7A32B00053C0F9 /* AroundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E15D2A2A7A32B00053C0F9 /* AroundTableViewCell.xib */; };
 		80E15D2F2A7A32C50053C0F9 /* AroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E15D2D2A7A32C50053C0F9 /* AroundCollectionViewCell.swift */; };
 		80E15D302A7A32C50053C0F9 /* AroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E15D2E2A7A32C50053C0F9 /* AroundCollectionViewCell.xib */; };
+		80E15D322A7A61440053C0F9 /* AroundCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E15D312A7A61440053C0F9 /* AroundCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		80E15D2A2A7A32B00053C0F9 /* AroundTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundTableViewCell.xib; sourceTree = "<group>"; };
 		80E15D2D2A7A32C50053C0F9 /* AroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundCollectionViewCell.swift; sourceTree = "<group>"; };
 		80E15D2E2A7A32C50053C0F9 /* AroundCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundCollectionViewCell.xib; sourceTree = "<group>"; };
+		80E15D312A7A61440053C0F9 /* AroundCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				80AB391D2A77EE8700716EE8 /* DetailViewController.swift */,
 				80AB391A2A77EA2100716EE8 /* testCollectionViewCell.xib */,
 				80E15D272A7A25830053C0F9 /* TableCollectionViewController.swift */,
+				80E15D312A7A61440053C0F9 /* AroundCollectionReusableView.swift */,
 				80E15D2D2A7A32C50053C0F9 /* AroundCollectionViewCell.swift */,
 				80E15D2E2A7A32C50053C0F9 /* AroundCollectionViewCell.xib */,
 				80E15D292A7A32B00053C0F9 /* AroundTableViewCell.swift */,
@@ -189,6 +192,7 @@
 				80E15D2F2A7A32C50053C0F9 /* AroundCollectionViewCell.swift in Sources */,
 				80AB390D2A779BD100716EE8 /* BookCollectionViewCell.swift in Sources */,
 				80AB39102A779E8100716EE8 /* MovieInfo.swift in Sources */,
+				80E15D322A7A61440053C0F9 /* AroundCollectionReusableView.swift in Sources */,
 				80AB391B2A77EA2100716EE8 /* testCollectionViewCell.swift in Sources */,
 				80E15D2B2A7A32B00053C0F9 /* AroundTableViewCell.swift in Sources */,
 				80AB390A2A779BBF00716EE8 /* BookCollectionViewController.swift in Sources */,
