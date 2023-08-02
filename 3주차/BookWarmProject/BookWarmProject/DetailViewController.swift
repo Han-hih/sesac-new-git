@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     static let identifier = "DetailViewController"
     var list = MovieInfo()
     
-    var movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0, like: false, color: UIColor.black)
+    var movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0, like: false, gerne: "", color: UIColor.black)
     
     
     @IBOutlet var contentsLabel: UILabel!

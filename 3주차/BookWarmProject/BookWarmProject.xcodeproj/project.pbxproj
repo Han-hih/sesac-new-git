@@ -21,6 +21,11 @@
 		80AB391B2A77EA2100716EE8 /* testCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB39192A77EA2100716EE8 /* testCollectionViewCell.swift */; };
 		80AB391C2A77EA2100716EE8 /* testCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AB391A2A77EA2100716EE8 /* testCollectionViewCell.xib */; };
 		80AB391E2A77EE8700716EE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB391D2A77EE8700716EE8 /* DetailViewController.swift */; };
+		80E15D282A7A25830053C0F9 /* TableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E15D272A7A25830053C0F9 /* TableCollectionViewController.swift */; };
+		80E15D2B2A7A32B00053C0F9 /* AroundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E15D292A7A32B00053C0F9 /* AroundTableViewCell.swift */; };
+		80E15D2C2A7A32B00053C0F9 /* AroundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E15D2A2A7A32B00053C0F9 /* AroundTableViewCell.xib */; };
+		80E15D2F2A7A32C50053C0F9 /* AroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E15D2D2A7A32C50053C0F9 /* AroundCollectionViewCell.swift */; };
+		80E15D302A7A32C50053C0F9 /* AroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80E15D2E2A7A32C50053C0F9 /* AroundCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		80AB39192A77EA2100716EE8 /* testCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		80AB391A2A77EA2100716EE8 /* testCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		80AB391D2A77EE8700716EE8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		80E15D272A7A25830053C0F9 /* TableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		80E15D292A7A32B00053C0F9 /* AroundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTableViewCell.swift; sourceTree = "<group>"; };
+		80E15D2A2A7A32B00053C0F9 /* AroundTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundTableViewCell.xib; sourceTree = "<group>"; };
+		80E15D2D2A7A32C50053C0F9 /* AroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundCollectionViewCell.swift; sourceTree = "<group>"; };
+		80E15D2E2A7A32C50053C0F9 /* AroundCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +89,13 @@
 				80AB390B2A779BD100716EE8 /* BookCollectionViewCell.swift */,
 				80AB390C2A779BD100716EE8 /* BookCollectionViewCell.xib */,
 				80AB39192A77EA2100716EE8 /* testCollectionViewCell.swift */,
-				80AB391A2A77EA2100716EE8 /* testCollectionViewCell.xib */,
 				80AB391D2A77EE8700716EE8 /* DetailViewController.swift */,
+				80AB391A2A77EA2100716EE8 /* testCollectionViewCell.xib */,
+				80E15D272A7A25830053C0F9 /* TableCollectionViewController.swift */,
+				80E15D292A7A32B00053C0F9 /* AroundTableViewCell.swift */,
+				80E15D2E2A7A32C50053C0F9 /* AroundCollectionViewCell.xib */,
+				80E15D2D2A7A32C50053C0F9 /* AroundCollectionViewCell.swift */,
+				80E15D2A2A7A32B00053C0F9 /* AroundTableViewCell.xib */,
 				80AB38F72A77995F00716EE8 /* Main.storyboard */,
 				80AB390F2A779E8100716EE8 /* MovieInfo.swift */,
 				80AB39112A77A1F200716EE8 /* Movie.swift */,
@@ -149,10 +164,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E15D2C2A7A32B00053C0F9 /* AroundTableViewCell.xib in Resources */,
 				80AB38FE2A77996000716EE8 /* LaunchScreen.storyboard in Resources */,
 				80AB390E2A779BD100716EE8 /* BookCollectionViewCell.xib in Resources */,
 				80AB38FB2A77996000716EE8 /* Assets.xcassets in Resources */,
 				80AB38F92A77995F00716EE8 /* Main.storyboard in Resources */,
+				80E15D302A7A32C50053C0F9 /* AroundCollectionViewCell.xib in Resources */,
 				80AB391C2A77EA2100716EE8 /* testCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,10 +186,13 @@
 				80AB38F62A77995F00716EE8 /* ViewController.swift in Sources */,
 				80AB38F22A77995F00716EE8 /* AppDelegate.swift in Sources */,
 				80AB38F42A77995F00716EE8 /* SceneDelegate.swift in Sources */,
+				80E15D2F2A7A32C50053C0F9 /* AroundCollectionViewCell.swift in Sources */,
 				80AB390D2A779BD100716EE8 /* BookCollectionViewCell.swift in Sources */,
 				80AB39102A779E8100716EE8 /* MovieInfo.swift in Sources */,
 				80AB391B2A77EA2100716EE8 /* testCollectionViewCell.swift in Sources */,
+				80E15D2B2A7A32B00053C0F9 /* AroundTableViewCell.swift in Sources */,
 				80AB390A2A779BBF00716EE8 /* BookCollectionViewController.swift in Sources */,
+				80E15D282A7A25830053C0F9 /* TableCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
