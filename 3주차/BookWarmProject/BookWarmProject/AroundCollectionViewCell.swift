@@ -8,14 +8,14 @@
 import UIKit
 
 class AroundCollectionViewCell: UICollectionViewCell {
-
+    static let identifier = "AroundCollectionViewCell"
+    
     @IBOutlet var movieImage: UIImageView!
     
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configure(row: Movie) {
+        movieImage.image = UIImage(named: row.title)
     }
+    
+   
 
 }
