@@ -10,7 +10,10 @@ import UIKit
 
 
 class BookCollectionViewController: UICollectionViewController {
-    
+
+    //    1. 서치바
+        let searchBar = UISearchBar()
+    var searchList: [String] = []
     var list = MovieInfo() {
         didSet {
             print("didset")
@@ -22,11 +25,19 @@ class BookCollectionViewController: UICollectionViewController {
 
         override func viewDidLoad() {
         super.viewDidLoad()
+           
+            searchBar.delegate = self
+            searchBar.placeholder = "검색어를 입력해주세요"
+            navigationItem.titleView = searchBar
+            searchBar.showsCancelButton = true
+            print("searchBar")
+            
+            
         //        3.
         let nib = UINib(nibName: testCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: testCollectionViewCell.identifier)
         setCollectionViewLayOut()
-        title = "영화목록"
+      //  title = "영화목록"
     }
     
     @IBAction func searchButtonTapped(_ sender: UIBarButtonItem) {
@@ -69,9 +80,10 @@ class BookCollectionViewController: UICollectionViewController {
     
     // 1.
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.movie.count
+//        return list.movie.count
+        return searchList.count
+        }
         
-    }
     //    2.
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testCollectionViewCell.identifier, for: indexPath) as? testCollectionViewCell else {
@@ -94,4 +106,42 @@ class BookCollectionViewController: UICollectionViewController {
         print()
     }
 }
+// MARK: - uiSearchBar
+
+//2. 서치바
+extension BookCollectionViewController: UISearchBarDelegate {
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchList.removeAll()
+        for item in list.movie {
+            if item.title.contains(searchBar.text!) {
+                searchList.append(item.title)
+                print(searchList)
+            }
+        }
+        collectionView.reloadData()
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchList.removeAll()
+        searchBar.text = ""
+        collectionView.reloadData()
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchList.removeAll()
+        for item in list.movie {
+            if item.title.contains(searchBar.text!) {
+                searchList.append(item.title)
+                print(searchList)
+            }
+        }
+        collectionView.reloadData()
+        
+        }
+        
+    }
+    
 
