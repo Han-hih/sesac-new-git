@@ -22,6 +22,9 @@ class testCollectionViewCell: UICollectionViewCell {
     
     
     
+    
+    
+    
    
     func configure(row: Movie) {
         mainView.layer.cornerRadius = 20

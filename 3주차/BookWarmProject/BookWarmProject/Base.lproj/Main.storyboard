@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VFz-PY-hbw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yyd-kZ-mxe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -38,9 +38,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092.3664122137402" y="0.70422535211267612"/>
+            <point key="canvasLocation" x="4392" y="1"/>
         </scene>
-        <!--Item-->
+        <!--Book Collection View Controller-->
         <scene sceneID="xUP-sq-okt">
             <objects>
                 <collectionViewController storyboardIdentifier="BookCollectionViewController" id="wuo-Ex-hS4" customClass="BookCollectionViewController" customModule="BookWarmProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +69,6 @@
                             <outlet property="delegate" destination="wuo-Ex-hS4" id="Rlh-eO-F1f"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="WKH-dx-Xvn"/>
                     <navigationItem key="navigationItem" id="WoM-Fg-JpE">
                         <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="YSg-Jb-9Eq">
                             <connections>
@@ -80,7 +79,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wd-Qh-kIN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2199.2366412213742" y="0.70422535211267612"/>
+            <point key="canvasLocation" x="3202" y="1"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="sgf-DI-8a0">
@@ -126,7 +125,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요약" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT5-Ki-Q9X">
-                                <rect key="frame" x="16" y="379" width="361" height="389"/>
+                                <rect key="frame" x="16" y="379" width="361" height="239"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,24 +138,39 @@
                                     <action selector="dissmisButtonTapped:" destination="ro7-uX-Ne2" eventType="touchUpInside" id="RHe-02-8Wq"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HiQ-YP-ViH">
+                                <rect key="frame" x="16" y="628" width="361" height="135.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gmz-EV-Hxs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gmz-EV-Hxs" firstAttribute="trailing" secondItem="MT5-Ki-Q9X" secondAttribute="trailing" constant="16" id="3Em-ZE-ufO"/>
+                            <constraint firstItem="HiQ-YP-ViH" firstAttribute="trailing" secondItem="MT5-Ki-Q9X" secondAttribute="trailing" id="3p6-81-FSC"/>
+                            <constraint firstItem="d9h-T2-neX" firstAttribute="top" secondItem="HiQ-YP-ViH" secondAttribute="bottom" constant="10" id="Cuu-T7-yDR"/>
+                            <constraint firstItem="HiQ-YP-ViH" firstAttribute="top" secondItem="MT5-Ki-Q9X" secondAttribute="bottom" constant="10" id="EcK-Rl-LSo"/>
                             <constraint firstItem="MT5-Ki-Q9X" firstAttribute="leading" secondItem="gmz-EV-Hxs" secondAttribute="leading" constant="16" id="Fpo-fc-vJ7"/>
                             <constraint firstItem="2uG-6j-4P5" firstAttribute="top" secondItem="gmz-EV-Hxs" secondAttribute="top" constant="16" id="NXk-cg-jZQ"/>
                             <constraint firstItem="gmz-EV-Hxs" firstAttribute="trailing" secondItem="XLO-Vf-Mph" secondAttribute="trailing" constant="16" id="Twt-oH-XF8"/>
                             <constraint firstItem="2uG-6j-4P5" firstAttribute="width" secondItem="1r2-yG-mes" secondAttribute="height" multiplier="43:213" id="XdR-AE-spD"/>
                             <constraint firstItem="MT5-Ki-Q9X" firstAttribute="top" secondItem="2uG-6j-4P5" secondAttribute="bottom" constant="20" id="Yne-EI-ONN"/>
+                            <constraint firstItem="HiQ-YP-ViH" firstAttribute="leading" secondItem="MT5-Ki-Q9X" secondAttribute="leading" id="eyL-8A-L5N"/>
                             <constraint firstItem="gmz-EV-Hxs" firstAttribute="bottom" secondItem="d9h-T2-neX" secondAttribute="bottom" constant="10" id="ncd-1k-SPb"/>
-                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="bottom" secondItem="MT5-Ki-Q9X" secondAttribute="bottom" constant="50" id="rJd-n0-Egy"/>
+                            <constraint firstItem="gmz-EV-Hxs" firstAttribute="bottom" secondItem="MT5-Ki-Q9X" secondAttribute="bottom" constant="200" id="rJd-n0-Egy"/>
                             <constraint firstItem="gmz-EV-Hxs" firstAttribute="trailing" secondItem="d9h-T2-neX" secondAttribute="trailing" constant="30" id="rTp-Lt-3Oi"/>
                             <constraint firstItem="2uG-6j-4P5" firstAttribute="leading" secondItem="gmz-EV-Hxs" secondAttribute="leading" constant="16" id="sdC-Gl-Nll"/>
                             <constraint firstItem="d9h-T2-neX" firstAttribute="leading" secondItem="gmz-EV-Hxs" secondAttribute="leading" constant="30" id="uID-MN-IS8"/>
                             <constraint firstItem="XLO-Vf-Mph" firstAttribute="leading" secondItem="2uG-6j-4P5" secondAttribute="trailing" constant="16" id="unJ-CD-kYV"/>
                             <constraint firstItem="XLO-Vf-Mph" firstAttribute="top" secondItem="2uG-6j-4P5" secondAttribute="top" id="v46-EC-t8F"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5yR-3T-tgI" appends="YES" id="jzz-Vr-HvG"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="vm1-yi-vaY"/>
                     <connections>
@@ -166,12 +180,18 @@
                         <outlet property="movieTitleLabel" destination="Ulz-Kp-Opf" id="HKx-Dj-uyi"/>
                         <outlet property="opendateLabel" destination="VAo-Ko-hkm" id="Xp6-hA-e4o"/>
                         <outlet property="rateLabel" destination="spf-h5-9Mo" id="Py2-Vn-nEM"/>
+                        <outlet property="reviewTextField" destination="HiQ-YP-ViH" id="mSk-r6-ED1"/>
                         <outlet property="runtimeLabel" destination="931-w0-iFm" id="gzP-rW-u9R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXO-5T-TFu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5yR-3T-tgI">
+                    <connections>
+                        <action selector="tapGesture:" destination="ro7-uX-Ne2" id="36x-PK-xhm"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4233" y="467"/>
+            <point key="canvasLocation" x="4344" y="735"/>
         </scene>
         <!--Table Collection View Controller-->
         <scene sceneID="gyf-QO-6kU">
@@ -249,44 +269,6 @@
             </objects>
             <point key="canvasLocation" x="3202.2900763358775" y="734.50704225352115"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Rbg-Tg-Xdt">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VFz-PY-hbw" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t98-Gf-Mas">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6ch-Mx-9RR" kind="relationship" relationship="rootViewController" id="Yib-eu-wvJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dKk-A3-9rC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="345.80152671755724" y="0.70422535211267612"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="D7o-0b-kr2">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6ch-Mx-9RR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="l5f-AW-UXG"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lX5-4A-zcv">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="wuo-Ex-hS4" kind="relationship" relationship="viewControllers" id="5pS-bn-0y7"/>
-                        <segue destination="yKX-q0-ged" kind="relationship" relationship="viewControllers" id="U4j-et-Ama"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9vO-vn-kaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1272.5190839694656" y="0.70422535211267612"/>
-        </scene>
         <!--둘러보기-->
         <scene sceneID="zcn-VL-N8d">
             <objects>
@@ -306,9 +288,49 @@
             </objects>
             <point key="canvasLocation" x="2275.5725190839694" y="734.50704225352115"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="uKw-Bl-hZD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rzh-fs-HsK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WKH-dx-Xvn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jm6-xR-iVj">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wuo-Ex-hS4" kind="relationship" relationship="rootViewController" id="NB7-9e-Nnd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAz-Ad-wXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2276" y="1"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Lki-wm-Gf7">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yyd-kZ-mxe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t6U-wh-WBm">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="rzh-fs-HsK" kind="relationship" relationship="viewControllers" id="tIi-YQ-MgU"/>
+                        <segue destination="yKX-q0-ged" kind="relationship" relationship="viewControllers" id="eke-N3-5Pu"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afE-f0-3tE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="1"/>
+        </scene>
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

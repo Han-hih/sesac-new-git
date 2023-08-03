@@ -22,9 +22,8 @@ class DetailViewController: UIViewController {
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var opendateLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var reviewTextField: UITextView!
     @IBOutlet var dismissButton: UIButton!
-    
-    
     
     var contents: String = "빈공간"
     
@@ -38,6 +37,7 @@ class DetailViewController: UIViewController {
         } else {
             dismissButton.isHidden = true
         }
+        placeholderSetting()
     }
     
     func configure() {
@@ -67,6 +67,35 @@ class DetailViewController: UIViewController {
     @IBAction func dissmisButtonTapped(_ sender: UIButton) {
         
         dismiss(animated: true)
+    }
+
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+}
+
+
+
+extension DetailViewController: UITextViewDelegate {
+    
+    func placeholderSetting() {
+        reviewTextField.delegate = self
+        reviewTextField.text = "후기를 입력해 주세요"
+        reviewTextField.textColor = UIColor.lightGray
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if reviewTextField.textColor == UIColor.lightGray {
+            reviewTextField.text = ""
+            reviewTextField.textColor = .black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if reviewTextField.text.isEmpty {
+            reviewTextField.text = "후기를 입력해 주세요"
+            reviewTextField.textColor = UIColor.lightGray
+        }
     }
     
 }

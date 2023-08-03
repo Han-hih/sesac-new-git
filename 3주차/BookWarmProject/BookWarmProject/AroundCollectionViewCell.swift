@@ -12,6 +12,8 @@ class AroundCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var movieImage: UIImageView!
     
+    
+    
     func configure(row: Movie) {
         movieImage.image = UIImage(named: row.title)
     }
