@@ -80,10 +80,13 @@ class BookCollectionViewController: UICollectionViewController {
     
     // 1.
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return list.movie.count
-        return searchList.count
-        }
         
+        if searchBar.text?.isEmpty == true {
+            return list.movie.count
+        } else {
+            return searchList.count
+        }
+    }
     //    2.
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testCollectionViewCell.identifier, for: indexPath) as? testCollectionViewCell else {
@@ -91,11 +94,17 @@ class BookCollectionViewController: UICollectionViewController {
         }
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
-        let row = searchList[indexPath.row]
-//        let row = list.movie[indexPath.row]
+        var row = list.movie[indexPath.row]
+        if searchBar.text?.isEmpty == true {
+             row = list.movie[indexPath.row]
+        } else {
+             row = searchList[indexPath.row]
+        }
+//        let row = searchList[indexPath.row]
         cell.configure(row: row)
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+
         
         
         return cell
@@ -104,6 +113,7 @@ class BookCollectionViewController: UICollectionViewController {
     @objc func likeButtonTapped(_ sender: UIButton) {
         print("clicked \(sender.tag)")
         list.movie[sender.tag].like.toggle()
+        searchList[sender.tag].like.toggle()
         print()
     }
 }
@@ -127,6 +137,7 @@ extension BookCollectionViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchList.removeAll()
         searchBar.text = ""
+        searchList = list.movie
         collectionView.reloadData()
         
     }
