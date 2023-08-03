@@ -13,7 +13,7 @@ class BookCollectionViewController: UICollectionViewController {
 
     //    1. 서치바
         let searchBar = UISearchBar()
-    var searchList: [String] = []
+    var searchList: [Movie] = []
     var list = MovieInfo() {
         didSet {
             print("didset")
@@ -91,7 +91,8 @@ class BookCollectionViewController: UICollectionViewController {
         }
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
-        let row = list.movie[indexPath.row]
+        let row = searchList[indexPath.row]
+//        let row = list.movie[indexPath.row]
         cell.configure(row: row)
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
@@ -115,7 +116,7 @@ extension BookCollectionViewController: UISearchBarDelegate {
         searchList.removeAll()
         for item in list.movie {
             if item.title.contains(searchBar.text!) {
-                searchList.append(item.title)
+                searchList.append(item)
                 print(searchList)
             }
         }
@@ -134,7 +135,7 @@ extension BookCollectionViewController: UISearchBarDelegate {
         searchList.removeAll()
         for item in list.movie {
             if item.title.contains(searchBar.text!) {
-                searchList.append(item.title)
+                searchList.append(item)
                 print(searchList)
             }
         }
