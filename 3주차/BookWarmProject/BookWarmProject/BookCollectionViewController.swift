@@ -58,8 +58,12 @@ class BookCollectionViewController: UICollectionViewController {
         guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
             return
         }
-//        viewcontroller.movie = list.movie[indexPath.row]
-        viewcontroller.movie = searchList[indexPath.row]
+        if searchBar.text?.isEmpty == true {
+            viewcontroller.movie = list.movie[indexPath.row]
+        } else {
+            viewcontroller.movie = searchList[indexPath.row]
+            
+        }
         viewcontroller.contents = list.movie[indexPath.row].title
         navigationController?.pushViewController(viewcontroller, animated: true)
         
