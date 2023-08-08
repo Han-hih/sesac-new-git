@@ -269,6 +269,45 @@
             </objects>
             <point key="canvasLocation" x="3202.2900763358775" y="734.50704225352115"/>
         </scene>
+        <!--Kakao View Controller-->
+        <scene sceneID="O4g-EQ-eK9">
+            <objects>
+                <viewController storyboardIdentifier="KakaoViewController" id="XQ8-e4-70d" customClass="KakaoViewController" customModule="BookWarmProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gJK-bP-IT7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hd0-9A-JCS">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="XEr-bO-qgo">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="XQ8-e4-70d" id="WlE-mQ-PeX"/>
+                                    </connections>
+                                </searchBar>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IqG-ta-NJn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IqG-ta-NJn" firstAttribute="trailing" secondItem="hd0-9A-JCS" secondAttribute="trailing" id="hda-5P-TtM"/>
+                            <constraint firstItem="hd0-9A-JCS" firstAttribute="leading" secondItem="IqG-ta-NJn" secondAttribute="leading" id="iIi-A9-ysY"/>
+                            <constraint firstItem="IqG-ta-NJn" firstAttribute="bottom" secondItem="hd0-9A-JCS" secondAttribute="bottom" id="m8b-Fs-ruu"/>
+                            <constraint firstItem="hd0-9A-JCS" firstAttribute="top" secondItem="IqG-ta-NJn" secondAttribute="top" id="mL9-p5-ERf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qkh-OQ-vZx"/>
+                    <connections>
+                        <outlet property="kakaoTableView" destination="hd0-9A-JCS" id="RP6-cO-uws"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cjo-cu-qmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3202" y="1455"/>
+        </scene>
         <!--둘러보기-->
         <scene sceneID="zcn-VL-N8d">
             <objects>
@@ -313,17 +352,38 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yyd-kZ-mxe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t6U-wh-WBm">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="rzh-fs-HsK" kind="relationship" relationship="viewControllers" id="tIi-YQ-MgU"/>
                         <segue destination="yKX-q0-ged" kind="relationship" relationship="viewControllers" id="eke-N3-5Pu"/>
+                        <segue destination="qra-ol-uyM" kind="relationship" relationship="viewControllers" id="H4s-zV-Mlu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afE-f0-3tE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1140" y="1"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="1Tk-9C-IZI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qra-ol-uyM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ehx-4Q-toi"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ntl-Nh-inh">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XQ8-e4-70d" kind="relationship" relationship="rootViewController" id="6OT-Xc-kJd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QyY-qJ-zyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2315" y="1455"/>
         </scene>
     </scenes>
     <resources>

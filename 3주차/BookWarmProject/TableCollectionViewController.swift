@@ -9,6 +9,8 @@ import UIKit
 
 let movie = MovieInfo()
 
+var recentArray: [String] = []
+
 class TableCollectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
@@ -36,7 +38,6 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
         
         let collectionNib = UINib(nibName: AroundCollectionViewCell.identifier, bundle: nil)
         aroundCollectionView.register(collectionNib, forCellWithReuseIdentifier: AroundCollectionViewCell.identifier)
-        
         //        aroundCollectionView.register(AroundCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "collectionHeader")
         //
         //
@@ -74,22 +75,31 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
         viewcontroller.modalPresentationStyle =  UIModalPresentationStyle.fullScreen
         self.present(viewcontroller, animated: true)
         tableView.reloadData()
+        recentArray.insert(list.movie[indexPath.row].title, at: 0)
+        print(recentArray)
     }
     
     // MARK: - 컬렉션뷰 세팅
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movie.movie.count
+//        return movie.movie.count
+//        collectionView.reloadData()
+        return recentArray.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AroundCollectionViewCell.identifier, for: indexPath) as? AroundCollectionViewCell else {
             return AroundCollectionViewCell()
         }
-        let row = movie.movie[indexPath.row]
+        
+        let row = list.movie[indexPath.row]
+        print(row)
+        
         cell.configure(row: row)
         
         return cell
+
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -100,6 +110,7 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
         viewcontroller.movie = list.movie[indexPath.row]
         viewcontroller.modalPresentationStyle =  UIModalPresentationStyle.fullScreen
         self.present(viewcontroller, animated: true)
+        
     }
     
     //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

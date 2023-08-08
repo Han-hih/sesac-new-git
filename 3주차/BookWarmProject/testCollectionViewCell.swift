@@ -19,12 +19,6 @@ class testCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var likeButton: UIButton!
     
-    
-    
-    
-    
-    
-    
    
     func configure(row: Movie) {
         mainView.layer.cornerRadius = 20
