@@ -6,18 +6,24 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Kingfisher
+import Alamofire
+
+struct Book {
+    var title: String
+    var thumbnail: String
+    var author: String
+}
+
 
 class KakaoTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+    @IBOutlet var thumbnailImage: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var authorLabel: UILabel!
+    
+    static let identifier = "KakaoTableViewCell"
+    
     
 }
