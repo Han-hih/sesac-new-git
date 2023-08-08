@@ -10,6 +10,11 @@
 		80A3972D2A82369400EA80BF /* KakaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3972C2A82369400EA80BF /* KakaoViewController.swift */; };
 		80A397302A82381200EA80BF /* KakaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3972E2A82381200EA80BF /* KakaoTableViewCell.swift */; };
 		80A397312A82381200EA80BF /* KakaoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A3972F2A82381200EA80BF /* KakaoTableViewCell.xib */; };
+		80A397342A82489700EA80BF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 80A397332A82489700EA80BF /* Kingfisher */; };
+		80A397372A82489F00EA80BF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 80A397362A82489F00EA80BF /* SwiftyJSON */; };
+		80A3973A2A8248B700EA80BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80A397392A8248B700EA80BF /* Alamofire */; };
+		80A3973C2A824A1C00EA80BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 80A3973B2A824A1C00EA80BF /* .gitignore */; };
+		80A3973E2A824A3200EA80BF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3973D2A824A3200EA80BF /* APIKey.swift */; };
 		80AB38F22A77995F00716EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB38F12A77995F00716EE8 /* AppDelegate.swift */; };
 		80AB38F42A77995F00716EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB38F32A77995F00716EE8 /* SceneDelegate.swift */; };
 		80AB38F62A77995F00716EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB38F52A77995F00716EE8 /* ViewController.swift */; };
@@ -36,6 +41,8 @@
 		80A3972C2A82369400EA80BF /* KakaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoViewController.swift; sourceTree = "<group>"; };
 		80A3972E2A82381200EA80BF /* KakaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTableViewCell.swift; sourceTree = "<group>"; };
 		80A3972F2A82381200EA80BF /* KakaoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KakaoTableViewCell.xib; sourceTree = "<group>"; };
+		80A3973B2A824A1C00EA80BF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		80A3973D2A824A3200EA80BF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		80AB38EE2A77995F00716EE8 /* BookWarmProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWarmProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AB38F12A77995F00716EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80AB38F32A77995F00716EE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A3973A2A8248B700EA80BF /* Alamofire in Frameworks */,
+				80A397372A82489F00EA80BF /* SwiftyJSON in Frameworks */,
+				80A397342A82489700EA80BF /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,12 +115,14 @@
 				80E15D2E2A7A32C50053C0F9 /* AroundCollectionViewCell.xib */,
 				80E15D292A7A32B00053C0F9 /* AroundTableViewCell.swift */,
 				80E15D2A2A7A32B00053C0F9 /* AroundTableViewCell.xib */,
+				80AB390F2A779E8100716EE8 /* MovieInfo.swift */,
+				80AB39112A77A1F200716EE8 /* Movie.swift */,
 				80AB38F72A77995F00716EE8 /* Main.storyboard */,
+				80A3973B2A824A1C00EA80BF /* .gitignore */,
+				80A3973D2A824A3200EA80BF /* APIKey.swift */,
 				80A3972C2A82369400EA80BF /* KakaoViewController.swift */,
 				80A3972E2A82381200EA80BF /* KakaoTableViewCell.swift */,
 				80A3972F2A82381200EA80BF /* KakaoTableViewCell.xib */,
-				80AB390F2A779E8100716EE8 /* MovieInfo.swift */,
-				80AB39112A77A1F200716EE8 /* Movie.swift */,
 				80AB38FA2A77996000716EE8 /* Assets.xcassets */,
 				80AB38FC2A77996000716EE8 /* LaunchScreen.storyboard */,
 				80AB38FF2A77996000716EE8 /* Info.plist */,
@@ -134,6 +146,11 @@
 			dependencies = (
 			);
 			name = BookWarmProject;
+			packageProductDependencies = (
+				80A397332A82489700EA80BF /* Kingfisher */,
+				80A397362A82489F00EA80BF /* SwiftyJSON */,
+				80A397392A8248B700EA80BF /* Alamofire */,
+			);
 			productName = BookWarmProject;
 			productReference = 80AB38EE2A77995F00716EE8 /* BookWarmProject.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +179,11 @@
 				Base,
 			);
 			mainGroup = 80AB38E52A77995F00716EE8;
+			packageReferences = (
+				80A397322A82489700EA80BF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				80A397352A82489F00EA80BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				80A397382A8248B700EA80BF /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 80AB38EF2A77995F00716EE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,6 +205,7 @@
 				80AB38FB2A77996000716EE8 /* Assets.xcassets in Resources */,
 				80AB38F92A77995F00716EE8 /* Main.storyboard in Resources */,
 				80E15D302A7A32C50053C0F9 /* AroundCollectionViewCell.xib in Resources */,
+				80A3973C2A824A1C00EA80BF /* .gitignore in Resources */,
 				80AB391C2A77EA2100716EE8 /* testCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +227,7 @@
 				80E15D2F2A7A32C50053C0F9 /* AroundCollectionViewCell.swift in Sources */,
 				80AB390D2A779BD100716EE8 /* BookCollectionViewCell.swift in Sources */,
 				80AB39102A779E8100716EE8 /* MovieInfo.swift in Sources */,
+				80A3973E2A824A3200EA80BF /* APIKey.swift in Sources */,
 				80E15D322A7A61440053C0F9 /* AroundCollectionReusableView.swift in Sources */,
 				80AB391B2A77EA2100716EE8 /* testCollectionViewCell.swift in Sources */,
 				80E15D2B2A7A32B00053C0F9 /* AroundTableViewCell.swift in Sources */,
@@ -432,6 +456,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		80A397322A82489700EA80BF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		80A397352A82489F00EA80BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		80A397382A8248B700EA80BF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80A397332A82489700EA80BF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80A397322A82489700EA80BF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		80A397362A82489F00EA80BF /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80A397352A82489F00EA80BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		80A397392A8248B700EA80BF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80A397382A8248B700EA80BF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 80AB38E62A77995F00716EE8 /* Project object */;
 }

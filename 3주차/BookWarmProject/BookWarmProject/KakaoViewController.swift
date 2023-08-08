@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class KakaoViewController: UIViewController {
 
@@ -21,7 +23,21 @@ class KakaoViewController: UIViewController {
     }
     
 
-   
+    func callRequest() {
+        let text = "swift".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = "https://dapi.kakao.com/v3/search/book?query=\(text)"
+        let header: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
+        
+        AF.request(url, method: .get, headers: header).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
 }
 
