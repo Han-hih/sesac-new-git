@@ -12,7 +12,11 @@ import Kingfisher
 
 class KakaoViewController: UIViewController {
     
+    
+    
     @IBOutlet var kakaoTableView: UITableView!
+    
+    @IBOutlet var searchBar: UISearchBar!
     
     var bookList: [Book] = []
     
@@ -20,17 +24,24 @@ class KakaoViewController: UIViewController {
         super.viewDidLoad()
         kakaoTableView.delegate = self
         kakaoTableView.dataSource = self
-       
+        searchBar.delegate = self
         callRequest()
         kakaoTableView.rowHeight = 100
+        
         
         let nib = UINib(nibName: "KakaoTableViewCell", bundle: nil)
         kakaoTableView.register(nib, forCellReuseIdentifier: "KakaoTableViewCell")
         
+        
     }
-    
+
     func callRequest() {
-        let text = "swift".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            var text = ""
+            if searchBar.text?.isEmpty == false {
+                text = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            } else {
+                text = "스위프트".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            }
         let url = "https://dapi.kakao.com/v3/search/book?query=\(text)"
         let header: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
         
@@ -55,6 +66,7 @@ class KakaoViewController: UIViewController {
             }
         }
     }
+    
 }
 
 
@@ -73,9 +85,27 @@ extension KakaoViewController: UITableViewDelegate, UITableViewDataSource {
             cell.thumbnailImage.kf.setImage(with: imageURL)
         }
         
+        
     
         
         return cell
+    }
+    
+    
+}
+extension KakaoViewController: UISearchBarDelegate {
+    func dismissKeyboard() {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        bookList.removeAll()
+        dismissKeyboard()
+        callRequest()
+        kakaoTableView.reloadData()
+        
+        searchBar.text = ""
+        
     }
     
     

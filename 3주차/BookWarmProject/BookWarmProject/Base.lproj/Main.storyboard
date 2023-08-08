@@ -302,6 +302,7 @@
                     <navigationItem key="navigationItem" id="qkh-OQ-vZx"/>
                     <connections>
                         <outlet property="kakaoTableView" destination="hd0-9A-JCS" id="RP6-cO-uws"/>
+                        <outlet property="searchBar" destination="XEr-bO-qgo" id="DIh-h7-gLV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjo-cu-qmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
