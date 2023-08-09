@@ -37,36 +37,42 @@ class KakaoViewController: UIViewController {
 
     func callRequest(query: String) {
         var text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-//        if text.isEmpty == false {
-//                text = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-//            } else {
-//                text = "스위프트".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-//            }
+        //        if text.isEmpty == false {
+        //                text = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        //            } else {
+        //                text = "스위프트".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        //            }
         let url = "https://dapi.kakao.com/v3/search/book?query=\(text)"
         let header: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
         
-        AF.request(url, method: .get, headers: header).validate().responseJSON { response in
+        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
-                for item in json["documents"].arrayValue {
-                    let author = item["authors"][0].stringValue
-                    let thumbnail = item["thumbnail"].stringValue
-                    let title = item["title"].stringValue
-                    self.bookList.append(Book(title: title, thumbnail: thumbnail, author: author))
+                let statusCode = response.response?.statusCode ?? 500
+                if statusCode == 200 {
+                    
+                    for item in json["documents"].arrayValue {
+                        let author = item["authors"][0].stringValue
+                        let thumbnail = item["thumbnail"].stringValue
+                        let title = item["title"].stringValue
+                        let data = Book(title: title, thumbnail: thumbnail, author: author)
+                        self.bookList.append(data)
+                        
+                        
                     }
-                    
-                    
-                self.kakaoTableView.reloadData()
-    
+                
+                    self.kakaoTableView.reloadData()
+                } else {
+                print("문제발생")
+                }
             case .failure(let error):
                 print(error)
             }
         }
     }
-    
 }
 
 
