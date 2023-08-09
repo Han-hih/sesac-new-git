@@ -25,7 +25,7 @@ class KakaoViewController: UIViewController {
         kakaoTableView.delegate = self
         kakaoTableView.dataSource = self
         searchBar.delegate = self
-        callRequest()
+        callRequest(query: "swift")
         kakaoTableView.rowHeight = 100
         
         
@@ -35,13 +35,13 @@ class KakaoViewController: UIViewController {
         
     }
 
-    func callRequest() {
-            var text = ""
-            if searchBar.text?.isEmpty == false {
-                text = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-            } else {
-                text = "스위프트".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-            }
+    func callRequest(query: String) {
+        var text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//        if text.isEmpty == false {
+//                text = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+//            } else {
+//                text = "스위프트".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+//            }
         let url = "https://dapi.kakao.com/v3/search/book?query=\(text)"
         let header: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
         
@@ -101,11 +101,11 @@ extension KakaoViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         bookList.removeAll()
         dismissKeyboard()
-        callRequest()
+        guard let query = searchBar.text else { return }
+        callRequest(query: query)
         kakaoTableView.reloadData()
         
         searchBar.text = ""
-        
     }
     
     
