@@ -14,6 +14,7 @@ class BookCollectionViewController: UICollectionViewController {
     //    1. 서치바
         let searchBar = UISearchBar()
     var searchList: [Movie] = []
+    var secondSearchList: [BookList] = []
     var list = MovieInfo() {
         didSet {
             print("didset")
@@ -43,6 +44,13 @@ class BookCollectionViewController: UICollectionViewController {
         setCollectionViewLayOut()
       //  title = "영화목록"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#function)
+        collectionView.reloadData()
+    }
+    
     
     @IBAction func searchButtonTapped(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -91,10 +99,15 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if searchBar.text?.isEmpty == true {
-            return list.movie.count
+            return tasks.count
         } else {
-            return searchList.count
+            return secondSearchList.count
         }
+//        if searchBar.text?.isEmpty == true {
+//            return list.movie.count
+//        } else {
+//            return searchList.count
+//        }
     }
     //    2.
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -103,14 +116,26 @@ class BookCollectionViewController: UICollectionViewController {
         }
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
-        var row = list.movie[indexPath.row]
+        
+        var data = tasks[indexPath.row]
         if searchBar.text?.isEmpty == true {
-             row = list.movie[indexPath.row]
+            data = tasks[indexPath.row]
         } else {
-             row = searchList[indexPath.row]
+            data = secondSearchList[indexPath.row]
         }
+//        cell.movieImage = data.bookThumb
+        
+        cell.configureBook(row: data)
+        
+        
+//        var row = list.movie[indexPath.row]
+//        if searchBar.text?.isEmpty == true {
+//             row = list.movie[indexPath.row]
+//        } else {
+//             row = searchList[indexPath.row]
+//        }
 //        let row = searchList[indexPath.row]
-        cell.configure(row: row)
+//        cell.configure(row: row)
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
 
@@ -132,11 +157,11 @@ class BookCollectionViewController: UICollectionViewController {
 extension BookCollectionViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchList.removeAll()
-        for item in list.movie {
-            if item.title.contains(searchBar.text!) {
-                searchList.append(item)
-                print(searchList)
+        secondSearchList.removeAll()
+        for item in tasks {
+            if item.bookTitle.contains(searchBar.text!) {
+                secondSearchList.append(item)
+                print(secondSearchList)
             }
         }
         collectionView.reloadData()
@@ -144,19 +169,20 @@ extension BookCollectionViewController: UISearchBarDelegate {
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchList.removeAll()
+        secondSearchList.removeAll()
         searchBar.text = ""
-        searchList = list.movie
+//        secondSearchList = list.movie
         collectionView.reloadData()
         
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchList.removeAll()
-        for item in list.movie {
-            if item.title.contains(searchBar.text!) {
-                searchList.append(item)
-                print(searchList)
+        for item in tasks {
+            if item.bookTitle.contains(searchBar.text!) {
+                secondSearchList.append(item)
+//                searchList.append(item)
+                print(secondSearchList)
             }
         }
         collectionView.reloadData()

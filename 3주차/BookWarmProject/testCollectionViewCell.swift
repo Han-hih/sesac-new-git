@@ -8,7 +8,7 @@
 import UIKit
 
 class testCollectionViewCell: UICollectionViewCell {
-
+    
     static let identifier = "testCollectionViewCell"
     
     @IBOutlet var movieLabel: UILabel!
@@ -19,7 +19,21 @@ class testCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var likeButton: UIButton!
     
-   
+    
+    func configureBook(row: BookList) {
+        mainView.layer.cornerRadius = 20
+        mainView.clipsToBounds = true
+        movieLabel.font = .boldSystemFont(ofSize: 14)
+        movieLabel.textColor = .green
+        movieLabel?.text = row.bookTitle
+        movieImage?.image = UIImage(named: row.bookThumb)
+        rateLabel?.text = row.bookAuthor
+        rateLabel.textColor = .blue
+    }
+    
+    
+    
+    
     func configure(row: Movie) {
         mainView.layer.cornerRadius = 20
         mainView.clipsToBounds = true
