@@ -107,6 +107,9 @@ extension KakaoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         print("")
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    }
+    
     
     
 }
