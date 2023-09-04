@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 
 class BookCollectionViewController: UICollectionViewController {
@@ -20,7 +20,8 @@ class BookCollectionViewController: UICollectionViewController {
             collectionView.reloadData()
         }
     }
-
+    //realm에서 읽어온 데이터 담을 배열
+    var tasks: Results<BookList>!
 
 
         override func viewDidLoad() {
@@ -32,7 +33,10 @@ class BookCollectionViewController: UICollectionViewController {
             searchBar.showsCancelButton = true
             print("searchBar")
             
-            
+        //realm가져오기
+            let realm = try! Realm()
+            tasks = realm.objects(BookList.self).sorted(byKeyPath: "bookTitle", ascending: true)
+            print(realm.configuration.fileURL)
         //        3.
         let nib = UINib(nibName: testCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: testCollectionViewCell.identifier)

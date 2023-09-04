@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import RealmSwift
 
 class KakaoViewController: UIViewController {
     
@@ -21,6 +22,9 @@ class KakaoViewController: UIViewController {
     var bookList: [Book] = []
     var page = 1
     var isEnd = false
+    
+    //realm에 데이터 저장
+    let realm = try? Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +97,13 @@ extension KakaoViewController: UITableViewDelegate, UITableViewDataSource, UITab
         if let imageURL = URL(string: bookList[indexPath.row].thumbnail) {
             cell.thumbnailImage.kf.setImage(with: imageURL)
         }
+        let task = BookList(bookTitle: bookList[indexPath.row].title, bookThumb: bookList[indexPath.row].thumbnail, bookAuthor: bookList[indexPath.row].author)
+        try? realm?.write {
+            realm?.add(task)
+            print("저장됨")
+        }
         return cell
+       
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -130,6 +140,9 @@ extension KakaoViewController: UISearchBarDelegate {
         callRequest(query: query, page: page)
         kakaoTableView.reloadData()
         
+        
+      
+       
 //        searchBar.text = ""
     }
     

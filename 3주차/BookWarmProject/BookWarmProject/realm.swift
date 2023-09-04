@@ -10,7 +10,7 @@ import RealmSwift
 
 class BookList: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var bookTitle: String
+    @Persisted(primaryKey: true) var bookTitle: String
     @Persisted var bookThumb: String
     @Persisted var bookAuthor: String
     
