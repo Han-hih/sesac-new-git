@@ -40,6 +40,10 @@ class KakaoViewController: UIViewController {
         
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.kakaoTableView.reloadData()
+    }
 
     func callRequest(query: String, page: Int) {
         let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!

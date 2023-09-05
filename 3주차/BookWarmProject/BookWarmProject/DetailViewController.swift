@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
     
@@ -27,6 +28,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var dismissButton: UIButton!
     
     var contents: String = "빈공간"
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,7 @@ class DetailViewController: UIViewController {
         setToolBar()
         self.navigationController?.isToolbarHidden = false
         
+//        tasks = realm.objects(BookList.self).sorted(byKeyPath: "bookTitle", ascending: false)
         configure()
         if modalPresentationStyle == .fullScreen {
             dismissButton.isHidden = false
@@ -44,6 +47,14 @@ class DetailViewController: UIViewController {
     }
     
     @objc func deleteCell() {
+        
+        
+        let task = book
+//        removeImageFromDocument(fileName: "Han_\(task._id).jpg")
+        try! realm.write {
+            realm.delete(task)
+        }
+        navigationController?.popViewController(animated: true)
         
     }
     
