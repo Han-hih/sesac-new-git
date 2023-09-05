@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Kingfisher
 
 
 class BookCollectionViewController: UICollectionViewController {
@@ -43,6 +44,8 @@ class BookCollectionViewController: UICollectionViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: testCollectionViewCell.identifier)
         setCollectionViewLayOut()
       //  title = "영화목록"
+            collectionView.reloadData()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,7 +127,7 @@ class BookCollectionViewController: UICollectionViewController {
             data = secondSearchList[indexPath.row]
         }
 //        cell.movieImage = data.bookThumb
-        
+       
         cell.configureBook(row: data)
         
         

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class testCollectionViewCell: UICollectionViewCell {
     
@@ -26,7 +27,13 @@ class testCollectionViewCell: UICollectionViewCell {
         movieLabel.font = .boldSystemFont(ofSize: 14)
         movieLabel.textColor = .green
         movieLabel?.text = row.bookTitle
-        movieImage?.image = UIImage(named: row.bookThumb)
+//        movieImage?.image = UIImage(named: row.bookThumb)
+        let imageUrl = row.bookThumb
+           if let url = URL(string: imageUrl) {
+            movieImage.load(url: url)
+            
+        }
+                
         rateLabel?.text = row.bookAuthor
         rateLabel.textColor = .blue
     }
@@ -53,4 +60,17 @@ class testCollectionViewCell: UICollectionViewCell {
         
     }
     
+}
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }
