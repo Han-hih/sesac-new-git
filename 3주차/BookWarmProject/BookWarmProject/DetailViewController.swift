@@ -11,6 +11,7 @@ class DetailViewController: UIViewController {
     
     static let identifier = "DetailViewController"
     var list = MovieInfo()
+    var book = BookList(bookTitle: "", bookThumb: "", bookAuthor: "")
     
     var movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0, like: false, gerne: "", color: UIColor.black)
     
@@ -41,8 +42,8 @@ class DetailViewController: UIViewController {
     }
     
     func configure() {
-        movieImageView.image = UIImage(named: movie.title)
-        movieTitleLabel.text = movie.title
+        movieImageView.load(url: URL(string: book.bookThumb)!)
+        movieTitleLabel.text = book.bookTitle
         runtimeLabel.text = "\(movie.runtime)분"
         rateLabel.text = "\(movie.rate)점"
         opendateLabel.text = movie.releaseDate
