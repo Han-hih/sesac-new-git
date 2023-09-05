@@ -80,6 +80,8 @@ class BookCollectionViewController: UICollectionViewController {
             viewcontroller.movie = searchList[indexPath.row]
             
         }
+        
+        viewcontroller.hidesBottomBarWhenPushed = true
         viewcontroller.contents = tasks[indexPath.row].bookTitle
         navigationController?.pushViewController(viewcontroller, animated: true)
         
