@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         
         
         let task = book
-//        removeImageFromDocument(fileName: "Han_\(task._id).jpg")
+        removeImageFromDocument(fileName: "Han_\(task._id).jpg")
         try! realm.write {
             realm.delete(task)
         }
