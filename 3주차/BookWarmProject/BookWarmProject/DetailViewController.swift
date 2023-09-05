@@ -31,6 +31,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = contents
+        setToolBar()
+        self.navigationController?.isToolbarHidden = false
         
         configure()
         if modalPresentationStyle == .fullScreen {
@@ -41,6 +43,21 @@ class DetailViewController: UIViewController {
         placeholderSetting()
     }
     
+    @objc func deleteCell() {
+        
+    }
+    
+    @objc func updateReview() {
+        
+    }
+    
+    func setToolBar() {
+        let deleteButton = UIBarButtonItem(title: "삭제", style: .plain, target: self, action: #selector(deleteCell))
+        let updateButton = UIBarButtonItem(title: "업데이트", style: .plain, target: self, action: #selector(updateReview))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        self.toolbarItems = [deleteButton, flexibleSpace, updateButton]
+        
+    }
     func configure() {
         movieImageView.load(url: URL(string: book.bookThumb)!)
         movieTitleLabel.text = book.bookTitle
