@@ -13,13 +13,15 @@ class BookList: Object {
     @Persisted var bookTitle: String
     @Persisted var bookThumb: String
     @Persisted var bookAuthor: String
+    @Persisted var bookMemo: String
     
-    convenience init(bookTitle: String, bookThumb: String, bookAuthor: String) {
+    convenience init(bookTitle: String, bookThumb: String, bookAuthor: String, bookMemo: String) {
         self.init()
         
         self.bookTitle = bookTitle
         self.bookThumb = bookThumb
         self.bookAuthor = bookAuthor
+        self.bookMemo = bookMemo
     }
     
 }

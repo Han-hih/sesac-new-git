@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     
     static let identifier = "DetailViewController"
     var list = MovieInfo()
-    var book = BookList(bookTitle: "", bookThumb: "", bookAuthor: "")
+    var book = BookList(bookTitle: "", bookThumb: "", bookAuthor: "", bookMemo: "")
     
     var movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0, like: false, gerne: "", color: UIColor.black)
     
@@ -48,7 +48,6 @@ class DetailViewController: UIViewController {
     
     @objc func deleteCell() {
         
-        
         let task = book
         removeImageFromDocument(fileName: "Han_\(task._id).jpg")
         try! realm.write {
@@ -59,6 +58,7 @@ class DetailViewController: UIViewController {
     }
     
     @objc func updateReview() {
+        
         
     }
     
