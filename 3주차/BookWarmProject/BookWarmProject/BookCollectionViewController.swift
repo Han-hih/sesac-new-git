@@ -25,7 +25,8 @@ class BookCollectionViewController: UICollectionViewController {
     //realm에서 읽어온 데이터 담을 배열
     var tasks: Results<BookList>!
 
-
+    //realm가져오기
+        let realm = try! Realm()
         override func viewDidLoad() {
         super.viewDidLoad()
            
@@ -35,8 +36,7 @@ class BookCollectionViewController: UICollectionViewController {
             searchBar.showsCancelButton = true
             print("searchBar")
             
-        //realm가져오기
-            let realm = try! Realm()
+      
             tasks = realm.objects(BookList.self).sorted(byKeyPath: "bookTitle", ascending: true)
             print(realm.configuration.fileURL)
         //        3.
@@ -48,6 +48,7 @@ class BookCollectionViewController: UICollectionViewController {
 
     }
     
+  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(#function)

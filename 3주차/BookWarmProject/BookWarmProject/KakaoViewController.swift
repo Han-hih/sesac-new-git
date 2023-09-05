@@ -96,11 +96,7 @@ extension KakaoViewController: UITableViewDelegate, UITableViewDataSource, UITab
         if let imageURL = URL(string: bookList[indexPath.row].thumbnail) {
             cell.thumbnailImage.kf.setImage(with: imageURL)
         }
-        
-        
-        
         return cell
-       
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -120,13 +116,26 @@ extension KakaoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //realm에 데이터 저장
-        let realm = try? Realm()
+        let realm = try! Realm()
         let task = BookList(bookTitle: bookList[indexPath.row].title, bookThumb: bookList[indexPath.row].thumbnail, bookAuthor: bookList[indexPath.row].author)
-        try? realm?.write {
-            realm?.add(task)
+        try! realm.write {
+            realm.add(task)
             print("저장됨")
         }
+         
+        DispatchQueue.global().async {
+            if let url = URL(string: self.bookList[indexPath.row].thumbnail), let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    self.saveImageToDocument(fileName: "Han_\(task._id).jpg", image: UIImage(data: data)!)
+                }
+            }
+        }
+        
+//        if  KakaoTableViewCell().thumbnailImage?.image != nil {
+//            saveImageToDocument(fileName: "Han_\(task._id).jpg", image:  KakaoTableViewCell().thumbnailImage.image!)
+//        }
     }
+    
 }
 
 
