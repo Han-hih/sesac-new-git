@@ -31,7 +31,6 @@ class testCollectionViewCell: UICollectionViewCell {
         let imageUrl = row.bookThumb
            if let url = URL(string: imageUrl) {
             movieImage.load(url: url)
-            
         }
                 
         rateLabel?.text = row.bookAuthor

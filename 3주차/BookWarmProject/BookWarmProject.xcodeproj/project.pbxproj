@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8006BBEA2AA71A030070C8AF /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8006BBE92AA71A030070C8AF /* FileManager+Extension.swift */; };
 		80211F142AA5A69E0062AE4F /* realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80211F132AA5A69E0062AE4F /* realm.swift */; };
 		80211F172AA5A6C70062AE4F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 80211F162AA5A6C70062AE4F /* Realm */; };
 		80211F192AA5A6C70062AE4F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 80211F182AA5A6C70062AE4F /* RealmSwift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8006BBE92AA71A030070C8AF /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		80211F132AA5A69E0062AE4F /* realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = realm.swift; sourceTree = "<group>"; };
 		80A3972C2A82369400EA80BF /* KakaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoViewController.swift; sourceTree = "<group>"; };
 		80A3972E2A82381200EA80BF /* KakaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				80A3973B2A824A1C00EA80BF /* .gitignore */,
 				80A3973D2A824A3200EA80BF /* APIKey.swift */,
 				80A3972C2A82369400EA80BF /* KakaoViewController.swift */,
+				8006BBE92AA71A030070C8AF /* FileManager+Extension.swift */,
 				80211F132AA5A69E0062AE4F /* realm.swift */,
 				80A3972E2A82381200EA80BF /* KakaoTableViewCell.swift */,
 				80A3972F2A82381200EA80BF /* KakaoTableViewCell.xib */,
@@ -244,6 +247,7 @@
 				80AB390A2A779BBF00716EE8 /* BookCollectionViewController.swift in Sources */,
 				80211F142AA5A69E0062AE4F /* realm.swift in Sources */,
 				80E15D282A7A25830053C0F9 /* TableCollectionViewController.swift in Sources */,
+				8006BBEA2AA71A030070C8AF /* FileManager+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

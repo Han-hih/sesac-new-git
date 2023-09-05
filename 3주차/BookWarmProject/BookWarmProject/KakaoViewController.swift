@@ -97,6 +97,8 @@ extension KakaoViewController: UITableViewDelegate, UITableViewDataSource, UITab
             cell.thumbnailImage.kf.setImage(with: imageURL)
         }
         
+        
+        
         return cell
        
     }
@@ -149,5 +151,5 @@ extension KakaoViewController: UISearchBarDelegate {
 //        searchBar.text = ""
     }
     
-    
 }
+
