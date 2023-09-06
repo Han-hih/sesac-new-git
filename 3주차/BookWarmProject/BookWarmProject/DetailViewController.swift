@@ -30,6 +30,8 @@ class DetailViewController: UIViewController {
     var contents: String = "빈공간"
     let realm = try! Realm()
     
+    var data: BookList?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = contents
@@ -52,7 +54,7 @@ class DetailViewController: UIViewController {
         removeImageFromDocument(fileName: "Han_\(task._id).jpg")
         try! realm.write {
             realm.delete(task)
-            realm.deleteAll()
+//            realm.deleteAll()
         }
         navigationController?.popViewController(animated: true)
         
@@ -61,10 +63,11 @@ class DetailViewController: UIViewController {
     @objc func updateReview() {
         
         try! realm.write {
-            realm.create(BookList.self, value: ["_id": BookList()._id, "bookTitle": movieTitleLabel.text ?? "", "bookThumb": book.bookThumb ?? "","bookAuthor": rateLabel.text ?? "", "bookMemo": reviewTextField.text ?? ""], update: .modified)
+            guard let data = data else { return }
+            realm.create(BookList.self, value: ["_id": data._id, "bookTitle": movieTitleLabel.text ?? "", "bookThumb": book.bookThumb ,"bookAuthor": rateLabel.text ?? "", "bookMemo": reviewTextField.text ?? ""], update: .modified)
         }
         
-        print("업데이트 되었습니다.")
+        print(reviewTextField.text)
         
     }
     
@@ -76,7 +79,6 @@ class DetailViewController: UIViewController {
         
     }
     func configure() {
-        print(URL(string: book.bookThumb))
         movieImageView.load(url: URL(string: book.bookThumb)!)
         
         movieTitleLabel.text = book.bookTitle
