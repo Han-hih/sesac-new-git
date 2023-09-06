@@ -14,6 +14,7 @@ struct Book {
     var title: String
     var thumbnail: String
     var author: String
+    var memo: String
 }
 
 

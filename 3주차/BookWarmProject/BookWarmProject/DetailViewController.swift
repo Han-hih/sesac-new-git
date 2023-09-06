@@ -52,6 +52,7 @@ class DetailViewController: UIViewController {
         removeImageFromDocument(fileName: "Han_\(task._id).jpg")
         try! realm.write {
             realm.delete(task)
+            realm.deleteAll()
         }
         navigationController?.popViewController(animated: true)
         
@@ -59,6 +60,11 @@ class DetailViewController: UIViewController {
     
     @objc func updateReview() {
         
+        try! realm.write {
+            realm.create(BookList.self, value: ["_id": BookList()._id, "bookTitle": movieTitleLabel.text ?? "", "bookThumb": book.bookThumb ?? "","bookAuthor": rateLabel.text ?? "", "bookMemo": reviewTextField.text ?? ""], update: .modified)
+        }
+        
+        print("업데이트 되었습니다.")
         
     }
     
@@ -70,13 +76,15 @@ class DetailViewController: UIViewController {
         
     }
     func configure() {
+        print(URL(string: book.bookThumb))
         movieImageView.load(url: URL(string: book.bookThumb)!)
-        movieTitleLabel.text = book.bookTitle
-        runtimeLabel.text = "\(movie.runtime)분"
-        rateLabel.text = "\(movie.rate)점"
-        opendateLabel.text = movie.releaseDate
         
-        descriptionLabel.text = movie.overview
+        movieTitleLabel.text = book.bookTitle
+//        runtimeLabel.text = "\(movie.runtime)분"
+        rateLabel.text = book.bookAuthor
+//        opendateLabel.text = movie.releaseDate
+        reviewTextField.text = book.bookMemo
+//        descriptionLabel.text = movie.overview
         descriptionLabel.numberOfLines = 0
         
         dismissButton.setTitle("뒤로가기", for: .normal)

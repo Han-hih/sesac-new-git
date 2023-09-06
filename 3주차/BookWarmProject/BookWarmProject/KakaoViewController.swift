@@ -69,7 +69,8 @@ class KakaoViewController: UIViewController {
                         let author = item["authors"][0].stringValue
                         let thumbnail = item["thumbnail"].stringValue
                         let title = item["title"].stringValue
-                        let data = Book(title: title, thumbnail: thumbnail, author: author)
+                        let memo = ""
+                        let data = Book(title: title, thumbnail: thumbnail, author: author, memo: memo)
                         self.bookList.append(data)
                     }
                     print(self.bookList)
@@ -121,7 +122,7 @@ extension KakaoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //realm에 데이터 저장
         let realm = try! Realm()
-        let task = BookList(bookTitle: bookList[indexPath.row].title, bookThumb: bookList[indexPath.row].thumbnail, bookAuthor: bookList[indexPath.row].author)
+        let task = BookList(bookTitle: bookList[indexPath.row].title, bookThumb: bookList[indexPath.row].thumbnail, bookAuthor: bookList[indexPath.row].author, bookMemo: bookList[indexPath.row].memo)
         try! realm.write {
             realm.add(task)
             print("저장됨")
