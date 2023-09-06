@@ -71,7 +71,7 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
         guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
             return
         }
-        viewcontroller.movie = list.movie[indexPath.row]
+//        viewcontroller.movie = list.movie[indexPath.row]
         viewcontroller.modalPresentationStyle =  UIModalPresentationStyle.fullScreen
         self.present(viewcontroller, animated: true)
         tableView.reloadData()
@@ -107,7 +107,7 @@ class TableCollectionViewController: UIViewController, UITableViewDelegate, UITa
         guard let viewcontroller = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
             return
         }
-        viewcontroller.movie = list.movie[indexPath.row]
+//        viewcontroller.movie = list.movie[indexPath.row]
         viewcontroller.modalPresentationStyle =  UIModalPresentationStyle.fullScreen
         self.present(viewcontroller, animated: true)
         

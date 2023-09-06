@@ -75,9 +75,9 @@ class BookCollectionViewController: UICollectionViewController {
             return
         }
         if searchBar.text?.isEmpty == true {
-            viewcontroller.book = tasks[indexPath.row]
+            viewcontroller.data = tasks[indexPath.row]
         } else {
-            viewcontroller.movie = searchList[indexPath.row]
+//            viewcontroller.movie = searchList[indexPath.row]
             
         }
         

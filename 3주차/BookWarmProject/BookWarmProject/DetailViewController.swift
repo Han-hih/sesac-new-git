@@ -11,10 +11,10 @@ import RealmSwift
 class DetailViewController: UIViewController {
     
     static let identifier = "DetailViewController"
-    var list = MovieInfo()
-    var book = BookList(bookTitle: "", bookThumb: "", bookAuthor: "", bookMemo: "")
-    
-    var movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0, like: false, gerne: "", color: UIColor.black)
+//    var list = MovieInfo()
+//    var book = BookList(bookTitle: "", bookThumb: "", bookAuthor: "", bookMemo: "")
+    var data: BookList?
+//    var movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0, like: false, gerne: "", color: UIColor.black)
     
     
     @IBOutlet var contentsLabel: UILabel!
@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
     var contents: String = "빈공간"
     let realm = try! Realm()
     
-    var data: BookList?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,15 +45,17 @@ class DetailViewController: UIViewController {
         } else {
             dismissButton.isHidden = true
         }
-        placeholderSetting()
+//        placeholderSetting()
     }
     
     @objc func deleteCell() {
         
-        let task = book
-        removeImageFromDocument(fileName: "Han_\(task._id).jpg")
+        guard let data = data else { return }
+
+        
+        removeImageFromDocument(fileName: "Han_\(data._id).jpg")
         try! realm.write {
-            realm.delete(task)
+            realm.delete(data)
 //            realm.deleteAll()
         }
         navigationController?.popViewController(animated: true)
@@ -61,14 +63,29 @@ class DetailViewController: UIViewController {
     }
     
     @objc func updateReview() {
-        
-        try! realm.write {
-            guard let data = data else { return }
-            realm.create(BookList.self, value: ["_id": data._id, "bookTitle": movieTitleLabel.text ?? "", "bookThumb": book.bookThumb ,"bookAuthor": rateLabel.text ?? "", "bookMemo": reviewTextField.text ?? ""], update: .modified)
+        print(#function)
+        guard let data = data else { return }
+//        print(data)
+//        let data = book
+        let item = BookList(value: [
+            "_id": data._id,
+            "bookTitle": data.bookTitle,
+            "bookThumb": data.bookThumb,
+            "bookAuthor": data.bookAuthor,
+            "bookMemo": reviewTextField.text ?? ""
+        ])
+        print(item)
+        do {
+            try realm.write {
+                realm.add(item, update: .modified)
+                print("저장됨")
+            }
+        } catch {
+            print("ERROR")
         }
         
         print(reviewTextField.text)
-        
+        navigationController?.popViewController(animated: true)
     }
     
     func setToolBar() {
@@ -79,13 +96,13 @@ class DetailViewController: UIViewController {
         
     }
     func configure() {
-        movieImageView.load(url: URL(string: book.bookThumb)!)
+        movieImageView.load(url: URL(string: data!.bookThumb)!)
         
-        movieTitleLabel.text = book.bookTitle
+        movieTitleLabel.text = data?.bookTitle
 //        runtimeLabel.text = "\(movie.runtime)분"
-        rateLabel.text = book.bookAuthor
+        rateLabel.text = data?.bookAuthor
 //        opendateLabel.text = movie.releaseDate
-        reviewTextField.text = book.bookMemo
+        reviewTextField.text = data?.bookMemo
 //        descriptionLabel.text = movie.overview
         descriptionLabel.numberOfLines = 0
         
@@ -118,23 +135,23 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITextViewDelegate {
     
-    func placeholderSetting() {
-        reviewTextField.delegate = self
-        reviewTextField.text = "후기를 입력해 주세요"
-        reviewTextField.textColor = UIColor.lightGray
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if reviewTextField.textColor == UIColor.lightGray {
-            reviewTextField.text = ""
-            reviewTextField.textColor = .black
-        }
-    }
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if reviewTextField.text.isEmpty {
-            reviewTextField.text = "후기를 입력해 주세요"
-            reviewTextField.textColor = UIColor.lightGray
-        }
-    }
+//    func placeholderSetting() {
+//        reviewTextField.delegate = self
+//        reviewTextField.text = "후기를 입력해 주세요"
+//        reviewTextField.textColor = UIColor.lightGray
+//    }
+//
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        if reviewTextField.textColor == UIColor.lightGray {
+//            reviewTextField.text = ""
+//            reviewTextField.textColor = .black
+//        }
+//    }
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        if reviewTextField.text.isEmpty {
+//            reviewTextField.text = "후기를 입력해 주세요"
+//            reviewTextField.textColor = UIColor.lightGray
+//        }
+//    }
     
 }
